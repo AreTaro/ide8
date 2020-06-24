@@ -5,6 +5,281 @@
 <meta charset="utf-8">
 </head>
 <body>
+<div id="banner" style="padding:0;margin:0;overflow:hidden;
+			background: #fff;
+			-webkit-background-size: cover; 
+			background-size: cover;
+			">
+<!-- Header -->
+		<style>
+.topnav {
+  overflow: none;
+  background-color: #333;
+}
+.topnav a {
+  display: block;
+  color: #fff;
+  text-align: left;
+  padding: 0 15px;
+  text-decoration: none;
+  font-size: 14px;
+}
+.topnav a:hover {
+  background-color: none;
+  color: black;
+}
+.active {
+  background-color: #4CAF50;
+  color: white;
+}
+.topnav .icon {
+  display: none;
+}
+
+
+@media screen and (max-width: 840px) {
+
+.responsive{
+    -moz-transition: height 3s ease-in-out;
+    -webkit-transition: height 3s ease-in-out;
+    -ms-transition:  height 3s ease-in-out;
+    transition:  height 3s ease-in-out;
+    height: auto;
+}
+  .topnav ul li, .topnav ul.icons-bar li, .topnav ul.icons-bar-rs li {display: none;}
+  .topnav a.icon {
+    float: right;
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 5px;
+  }
+  .topnav a.icon:hover {
+  background-color: inherit;
+  }
+
+  .topnav.responsive {position: relative;}
+  .topnav.responsive a.icon {
+    position: absolute;
+    right: 0;
+    top: 5px;
+  }
+ 
+  .topnav.responsive ul li {
+    float: none;
+    display: inline-block;
+    text-align: left;
+  }
+
+  .topnav.responsive a.icon > .fa-plus::before {
+    content: "\f068";
+  }
+  .formulaire_recherche {top:6.5em;right:.5em;}
+  #navButton .toggle{top:2.5em;width:2em;}
+
+  .responsive :last-child {
+    margin-bottom: 10px;
+  }
+
+
+.topnav.responsive{transition: all .3s linear 0s; }
+
+
+}
+
+@media screen and (min-width: 840px) and (max-width: 960px) {
+.topnav a {
+    padding: 5px 10px;
+  }
+}
+
+
+ul.icons-bar-rs li {
+    display: inline-block;
+}
+ul.icons-bar li {
+    display: inline-block;
+    padding: 0 1.25em 0 0;
+}
+
+.rech{min-width: 50px;}
+
+</style>
+
+
+<div class="topnav" id="top-header">
+  <div class="row">
+    <div class="6u 7u(narrow) 12u(narrower)">
+      <ul class="icons-bar">
+        <li><a href="./?Accessibilite"><i class="fab fa-audible"></i></a></li>
+      
+        <li><a href="https://www.bu.univ-paris8.fr/">Bibliothèque</a></li>
+        <li><a href="https://portail.univ-paris8.fr/bdc/">BDC</a></li>
+        <li><a alt="Espace numérique de travail" href="https://e-p8.univ-paris8.fr/uPortal/f/welcome/normal/render.uP">Espace perso</a></li>
+
+      </ul></div>
+
+    <div class="5u 4u(narrow) 12u(narrower)">
+      <ul class="icons-bar-rs">
+          <li><a href="https://twitter.com/UnivParis8"><i class="fab fa-twitter"></i></a></li>
+                <li><a href="https://www.facebook.com/Paris8"><i class="fab fa-facebook-f"></i></a></li>
+          <li><a href="https://vimeo.com/paris8webtv"><i class="fab fa-vimeo-v"></i></a></li>
+          <li><a href="https://www.linkedin.com/company/universit-paris-8-vincennes-saint-denis"><i class="fab fa-linkedin-in"></i></a></li>
+          <li><a href="https://www.instagram.com/univparis8/"><i class="fab fa-instagram"></i></a>
+          </li>   
+      </ul>
+    </div>
+
+    <div class="1u 1u(narrow) 12u(narrower)"><i class="fas fa-search rech"></i></div>
+    <div class="show 10u" style="display: none;">
+<form action="spip.php?page=recherche" method="get" class="" accept-charset="UTF-8">
+    <input name="page" value="recherche" type="hidden">
+    <div class="">
+        <input placeholder="Ex : recherche sur le site" type="search" id="edit-text" name="recherche" value="" size="60" maxlength="128" class="form-search">
+    </div>
+    <div class="form-actions js-form-wrapper form-wrapper" id="ows-edit-actions">
+        <input type="submit" id="ows-edit-submit" value="" class="button js-form-submit form-submit">
+    </div>
+</form>
+</div>
+
+<style type="text/css">
+
+.rech{cursor: pointer;margin:5px 0;}
+.topnav form {
+position: relative;
+display: -ms-flexbox;
+display: flex;
+-ms-flex-wrap: wrap;
+flex-wrap: wrap;
+-ms-flex-pack: end;
+justify-content: flex-end;
+margin:0;padding:0;
+color:#fff;
+margin:0 1.5em 2em 0;
+}
+
+.topnav form .form-item,  
+.topnav form .form-actions {
+    display: -ms-flexbox;
+    display: flex;
+    margin: 0;
+}
+
+.topnav form input[type="search"] {
+width: 100%;
+padding: 10px;
+border: none;
+border-bottom: 4px solid rgb(192, 22, 22);
+font-size: 1em;
+margin:20px 0;
+}
+
+.topnav input[type="search"] {
+    -webkit-appearance: textfield;
+    box-sizing: content-box;
+}
+.topnav [type="search"] {
+    -webkit-appearance: textfield;
+    outline-offset: -2px;
+}
+
+.topnav form .form-actions {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transition: top ease 0.5s;
+}
+
+.topnav form .form-item,
+.topnav form .form-actions {
+    display: -ms-flexbox;
+    display: flex;
+    margin: 0;
+}
+
+.topnav form input[type="submit"] {
+/*    background-image: url(https://upload.wikimedia.org/wikipedia/commons/7/7e/Vector_search_icon.svg);
+    background-size: 25px;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    padding: 0;
+    border: 0;
+    background-color: transparent;
+    width: 40px;
+    min-width: 1em;*/
+}
+
+#banner input[type="submit"]
+{
+    box-shadow: none;
+    min-width: 1em;
+    margin:20px 0;
+}
+</style>  </div>
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()"><i class="fa fa-plus"></i></a>
+</div>
+
+<div style="background-color:#EADEC5;
+background-image: linear-gradient(
+135deg,
+rgba(51,51,51, 1) 0%,
+rgba(51,51,51, 1) 32%,
+rgba(255,255,255, 0.95) 32%,
+rgba(255,255,255, 0.95) 100%
+);
+height:17px;
+">
+</div>
+
+<div style="text-align:center;margin-bottom:5px">
+    <h1><a href="https://www.iedparis8.net"><img src="squelettes/images/logo-p8.svg" width="120" alt=" Institut d’Enseignement à Distance - Université Paris 8"></a></h1>
+   
+</div>
+
+<header id="header" class="alt reveal">
+    <nav id="nav">
+        <ul>
+        
+            <li style="white-space: nowrap;">
+              <a href="./?-Institut-" style="height:55px;padding-top:20px;">Institut</a></li>
+        
+            <li style="white-space: nowrap;">
+              <a href="./?-Catalogue-des-Formations-" style="height:55px;padding-top:20px;">Catalogue des Formations</a></li>
+        
+            <li style="white-space: nowrap;">
+              <a href="./?-Procedures-d-Admission-" style="height:55px;padding-top:20px;">Procédures d’Admission</a></li>
+        
+            <li style="white-space: nowrap;">
+              <a href="./?-Informations-Scolarite-" style="height:55px;padding-top:20px;">Informations &amp; Scolarité</a></li>
+        
+            <li style="white-space: nowrap;">
+              <a href="./?-Campagne-d-Inscription-2020-2021-" style="height:55px;padding-top:20px;">Campagne d’Inscription 2020-2021</a></li>
+        
+            <li style="white-space: nowrap;">
+              <a href="./?-Foire-aux-Questions-" style="height:55px;padding-top:20px;">Foire aux Questions</a></li>
+        
+            <li style="white-space: nowrap;">
+              <a href="./?-Plate-forme-EAD-Moodle-IED-" style="height:55px;padding-top:20px;">Plate forme EAD&nbsp;: Moodle IED</a></li>
+        
+            <li style="white-space: nowrap;">
+              <a href="./?-Liens-Utiles-259-" style="height:55px;padding-top:20px;">Liens Utiles</a></li>
+        
+        </ul>
+    </nav>
+</header>
+
+
+<script>
+function myFunction() {
+  $("#top-header").toggleClass( "responsive"); 
+}
+</script>
+	
+		
+	</div>  
+
 <h1 style="text-align: center;"><strong>Bienvenue sur le site </strong></h1>
 <h1 style="text-align: center;"><strong>des &eacute;tudiants de l'ied8 au Japon</strong></h1>
 <h1 style="text-align: left;"></h1>
